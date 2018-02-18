@@ -91,21 +91,15 @@
   </nav>
   <div class="content-wrapper">
     <div class="container-fluid">
-      <form action='confirmation.html'>
-        <div class="form-group">
-          <label for="fname">First Name:</label>
-          <input type="text" class="form-control" id="fname">
-        </div>
-        <div class="form-group">
-          <label for="lname">Last Name:</label>
-          <input type="text" class="form-control" id="lname">
-        </div>
-        <div class="form-group">
-          <label for="symptoms">Symptoms:</label>
-          <textarea class="form-control" rows="3" id="symptoms"></textarea>
-        </div>
-        <button type="submit" href="confirmation.html" onclick="window.location='confirmation.html';" class="btn btn-default">Submit</button>
-      </form>
+      <div class="jumbotron">
+        <h1 class="display-4">Success!</h1>
+        <p class="lead">We have your preliminary diagnosis:<span id="myVar"></span></p>
+        <hr class="my-4">
+        <p>We have booked you an ER appointment for 3:30 at Ottawa General Hospital.</p>
+        <p class="lead">
+          <a class="btn btn-primary btn-lg" href="https://www.google.com/maps/dir/?api=1&origin=Faculty+Social+Sciences+Ottawa&destination=Ottawa+General+Hospital&travelmode=driving" role="button">Directions</a>
+        </p>
+      </div>
 
     </div>
 
@@ -128,16 +122,6 @@
 
     <!-- API -->
     <script src="curlScript.js"></script>
-    <script type="text/javascript">
-      $(function() {
-        $('form').submit(function(){
-          $.post('http://example.com/upload', function() {
-            window.location = 'confirmation.html';
-          });
-          return false;
-        });
-      });
-    </script>
   </div>
 </body>
 
